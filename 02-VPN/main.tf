@@ -26,6 +26,7 @@ module "vpn_instance" {
 
   #this is optional, if we dont give this will be provisioned inside the default subnet of default vpc
   #subnet_id = local.public_subnet_ids[0] # public subnet in default vpc
+  user_data = file("openvpn.sh")
   
   tags = merge(
     {
